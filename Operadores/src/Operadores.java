@@ -104,4 +104,35 @@ public class Operadores {
 
     }
 
+    public void cambiosTipo(){
+
+        //casteo
+
+        //
+
+        //int letraASCII = 75;
+        //System.out.println((char)+letraASCII);
+
+
+        //parseo
+        //String a int, double, boolean, char, float.
+        //Integer.parseInt(string)
+
+        //String palabra = "7";
+        //System.out.println(Integer.parseInt(palabra)+10);
+
+        //String palabra = "si";
+        //System.out.println(Boolean.parseBoolean(palabra));
+
+        boolean cierto = true;
+        System.out.println(String.valueOf(cierto)+"asd");
+
+
+
+
+
+
+
+    }
+
 }
