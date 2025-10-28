@@ -194,28 +194,55 @@ public class Operador {
 
     public void ejercicio10(){
 
+        //pedir salario base por horas
+        //horas trabajadas
+        // ha hecho horas extras?
+
         lectorHoras = new Scanner(System.in);
-        System.out.println("Indica cuanto cobras por hora");
-        int salarioHora = lectorHoras.nextInt();
-        System.out.println("Indica cuantas horas has trabajado");
+
+        System.out.println("Cuanto es tu salario base por hora:");
+        double salarioHora = lectorHoras.nextDouble();
+        System.out.println("Cuantas horas has trabajado:");
         int horasTrabajadas = lectorHoras.nextInt();
-        System.out.println("Has trabajado horas extras");
-        boolean horasExtras = lectorHoras.nextBoolean();
+        System.out.println("Has hecho horas extra?:");
+        boolean realizaExtra = lectorHoras.nextBoolean();
 
-        int salarioTotal=0;
+        //separar horas normales y extras
 
-        if (horasExtras && horasTrabajadas>40){
-            int numeroHorasExtras = horasTrabajadas-40;
-            salarioTotal = numeroHorasExtras * (salarioHora*2);
-            salarioTotal += 40*salarioHora;
-        } else {
-            salarioTotal += 40*salarioHora;
-        }
-        System.out.println("El salario sobrado este mes es "+salarioTotal);
+        int horasNormales = Math.min(40, horasTrabajadas);
+        int horasExtra = Math.max(0, horasTrabajadas - 40);
+
+        boolean mas40 = horasTrabajadas>40;
+        boolean derechoExtra = horasExtra>0;
+        boolean aplicanExtra = mas40&&derechoExtra;
+
+        System.out.println("Trabajas mas de 40 hoas? "+mas40);
+        System.out.println("Tienes derecho a horas extra? "+derechoExtra);
+        System.out.println("Se aplican horas extra? "+aplicanExtra);
 
 
 
-        lectorHoras.close();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
