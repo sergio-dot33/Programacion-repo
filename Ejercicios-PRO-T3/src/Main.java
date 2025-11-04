@@ -29,8 +29,23 @@ public class Main {
         //Programa programa = new Programa();
         //programa.ejercicio8();
 
+        //Programa programa = new Programa();
+        //programa.ejercicio9();
+
+        //Programa programa = new Programa();
+        //programa.ejercicio10();
+
+        //Programa programa = new Programa();
+        //programa.ejercicio11();
+
+        //Programa programa = new Programa();
+        //programa.ejercicio12();
+
         Programa programa = new Programa();
-        programa.ejercicio9();
+        programa.ejercicio13();
+
+
+
 
 
 

@@ -11,6 +11,10 @@ public class Programa {
     Scanner lectorNota1;
     Scanner lectorNumero2;
     Scanner lectorIMC;
+    Scanner lectorAltura;
+    Scanner lectorPrecio;
+    Scanner lectorPass;
+    Scanner lectorDia;
 
     public void ejercicio1(){
 
@@ -172,8 +176,149 @@ public class Programa {
         }
     }
 
+    public void ejercicio10(){
+
+        lectorAltura = new Scanner(System.in);
+
+        System.out.println("Introduce tu altura en cm:");
+        int altura = lectorAltura.nextInt();
+        int alturaMin = 120;
+        int alturaMax = 200;
+
+        if (altura<=120){
+            System.out.println("No puedes subir. Altura minima "+alturaMin);
+        } else if (altura>120 && altura<=200){
+            System.out.println("Puedes subir");
+        } else if (altura>200) {
+            System.out.println("No puedes subir. Altura maxima "+alturaMax);
+        }
+    }
+
+    public void ejercicio11(){
+
+        lectorPrecio = new Scanner(System.in);
+
+        System.out.println("Introduce el importe de la compra:");
+        int precioCompra = lectorPrecio.nextInt();
+        System.out.println("Eres socio?");
+        boolean esSocio = lectorPrecio.nextBoolean();
+
+        double descImporteMasSocio = precioCompra*0.8;
+        double descNoImporteMasSocio = precioCompra*0.9;
+        double descImporteMenosSocio = precioCompra*0.95;
+
+        if (precioCompra>=200 && esSocio==true){
+            System.out.println("Importe original: "+precioCompra);
+            System.out.println("Tienes descuento del 20%");
+            System.out.println("Importe final "+descImporteMasSocio);
+        } else if (precioCompra<200 && esSocio==true) {
+            System.out.println("Tienes descuento del 10%");
+            System.out.println("Importe final: "+descNoImporteMasSocio);
+        } else if (precioCompra>=300 && esSocio==false){
+            System.out.println("Tienes descuento del 5%");
+            System.out.println("Importe final: "+descImporteMenosSocio);
+        } else if (precioCompra<300 && esSocio==false) {
+            System.out.println("No hay descuento");
+        }
 
 
+
+    }
+
+    public void ejercicio12(){
+
+        lectorPass = new Scanner(System.in);
+
+        System.out.println("Introduce una contrasena");
+        String pass = lectorPass.next();
+        boolean nCaracteres  = pass.length() >=8;
+        System.out.println("La contrasena al menos tiene 8 caracteres "+nCaracteres);
+        boolean esValida = !(pass.equals("12345678") || pass.equals("password"));
+        System.out.println("La pass es prohibida "+!esValida);
+        boolean contieneNumero = pass.contains("1") || pass.contains("2");
+        boolean passValida = nCaracteres && esValida && contieneNumero;
+
+        System.out.println("La contrasena es valida: "+passValida);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }
+
+    public void ejercicio13(){
+
+        lectorDia = new Scanner(System.in);
+
+        System.out.println("Introduce tu edad:");
+        int edad = lectorDia.nextInt();
+        System.out.println("Introduce dia de la semana");
+        int diaSemana = lectorDia.nextInt();
+        int calculoEntrada = 0;
+
+        if (edad<12){
+            calculoEntrada = 0;
+        } else if (edad<17){
+            if (diaSemana == 2){
+                calculoEntrada = 0;
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }
 
 
 }
