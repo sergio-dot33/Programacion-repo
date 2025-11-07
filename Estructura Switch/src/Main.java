@@ -4,7 +4,9 @@ public class Main {
 
         EstructuraSwitch operaciones = new EstructuraSwitch();
         //operaciones.estructuraTradicional();
-        operaciones.estructuraLambda();
+        //operaciones.estructuraLambda();
+
+
 
 
 
