@@ -30,6 +30,8 @@ public class EstructuraSwitch {
                 System.out.println("Estya nota no es analizable");
         }
 
+        System.out.println("Hoy estamos a "+DiaSemana.Jueves+" de "+MesesAnio.Noviembre);
+
     }
 
     public void estructuraLambda(){
