@@ -43,30 +43,90 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Cual es el nombre del jugador?");
+        System.out.println("Nombre del jugador1:");
         String nombreJugador1 = scanner.next();
-        System.out.println("Cual es el nombre del otro jugador?");
+        System.out.println("Nombre del jugador2:");
         String nombreJugador2 = scanner.next();
 
-        int puntuacionInicial = 301;
-        int puntuacion1 = puntuacionInicial;
-        int puntuacion2 = puntuacionInicial;
-        int totalTurnos = 0;
-
-        int numeroAleatorio1 = (int) (Math.random()*60);
-        int numeroAleatorio2 = (int) (Math.random()*60);
-        int numeroAleatorio3 = (int) (Math.random()*60);
-
-        int puntuacionTurno1 = numeroAleatorio1+numeroAleatorio2+numeroAleatorio3;
-
-        int puntuacionActual1 = puntuacionInicial - puntuacionTurno1;
-
-        int puntuacionTurno2 = numeroAleatorio1+numeroAleatorio2+numeroAleatorio3;
-
-        int puntuacionActual2 = puntuacionInicial - puntuacionTurno2;
+        int puntInicialJg1 = 301;
+        int puntInicialJg2 = 301;
+        int contadorTurnos = 0;
+        boolean partidaTerminada = false;
 
 
+        //se lanzan 3 dardos
 
+        do {
+
+            System.out.println("Turno del jugador 1 "+nombreJugador1);
+
+            int tirada1 = (int) (Math.random() * 60)+1;
+            System.out.println("Resultado de primer lanzamiento "+tirada1);
+            int tirada2 = (int) (Math.random() * 60)+1;
+            System.out.println("Resultado de segundo lanzamiento "+tirada2);
+            int tirada3 = (int) (Math.random() * 60)+1;
+            System.out.println("Resultado de tercer lanzamiento "+tirada3);
+
+            int puntuacionTurno1 = tirada1+tirada2+tirada3;
+            System.out.println("El resultado del turno es "+puntuacionTurno1);
+
+
+            int resultadoGanar = puntInicialJg1 - puntuacionTurno1;
+            System.out.println("Tu puntuacion es de "+resultadoGanar);
+
+            if (resultadoGanar < 0) {
+                System.out.println("Te has pasado, el resultado no se actualiza");
+            } else if (resultadoGanar == 0){
+                System.out.println("Has ganado!!! "+nombreJugador1);
+                contadorTurnos++;
+                System.out.println("La partida ha durado "+contadorTurnos);
+                partidaTerminada =true;
+                break;
+            } else {
+                puntInicialJg1 = resultadoGanar;
+            }
+
+            contadorTurnos++;
+
+            System.out.println("Turno del jugador 2 "+nombreJugador2);
+
+            int tirada4 = (int) (Math.random() * 60)+1;
+            System.out.println("Resultado de primer lanzamiento "+tirada4);
+            int tirada5 = (int) (Math.random() * 60)+1;
+            System.out.println("Resultado de segundo lanzamiento "+tirada5);
+            int tirada6 = (int) (Math.random() * 60)+1;
+            System.out.println("Resultado de tercer lanzamiento "+tirada6);
+
+            int puntuacionTurno2 = tirada4+tirada5+tirada6;
+            System.out.println("El resultado del turno es "+puntuacionTurno2);
+
+
+            int resultadoGanar2 = puntInicialJg2 - puntuacionTurno2;
+            System.out.println("Tu puntuacion es de "+resultadoGanar2);
+
+            if (resultadoGanar2 < 0) {
+                System.out.println("Te has pasado, el resultado no se actualiza");
+            } else if (resultadoGanar2 == 0){
+                System.out.println("Has ganado!!! "+nombreJugador2);
+                contadorTurnos++;
+                System.out.println("La partida ha durado "+contadorTurnos);
+                partidaTerminada = true;
+                break;
+            } else {
+                puntInicialJg2 = resultadoGanar2;
+            }
+
+            contadorTurnos++;
+
+            if (puntInicialJg2 < puntInicialJg1){
+                System.out.println("Va ganando el jugador 2");
+            } else if (puntInicialJg1 < puntInicialJg2) {
+                System.out.println("Va ganando el jugador 1");
+            } else if (puntInicialJg1 == puntInicialJg2){
+                System.out.println("Vais empatados");
+            }
+
+        } while (!partidaTerminada);
 
     }
 }

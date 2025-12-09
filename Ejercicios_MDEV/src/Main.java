@@ -8,8 +8,11 @@ public class Main {
         //EjerciciosOperadores ejerciciosOperadores = new EjerciciosOperadores();
         //ejerciciosOperadores.ejercicios();
 
-        EjerciciosStrings ejerciciosStrings = new EjerciciosStrings();
-        ejerciciosStrings.ejercicios();
+        //EjerciciosStrings ejerciciosStrings = new EjerciciosStrings();
+        //ejerciciosStrings.ejercicios();
+
+        EjerciciosCondicionales ejerciciosCondicionales = new EjerciciosCondicionales();
+        ejerciciosCondicionales.ejercicios();
 
     }
 }
