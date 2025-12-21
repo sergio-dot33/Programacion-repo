@@ -1,3 +1,5 @@
+package EjsStrings;
+
 public class EjerciciosStrings {
 
     public void ejercicios(){

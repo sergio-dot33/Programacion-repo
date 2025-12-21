@@ -1,3 +1,5 @@
+package EjsVariables;
+
 public class EjerciciosVariables {
 
     /*

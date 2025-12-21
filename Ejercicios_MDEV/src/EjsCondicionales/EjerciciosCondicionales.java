@@ -1,3 +1,5 @@
+package EjsCondicionales;
+
 public class EjerciciosCondicionales {
 
     public void ejercicios(){

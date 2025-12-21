@@ -19,7 +19,11 @@ public class Main {
 
         //controller.ejercicio8();
 
-        controller.ejercicio9();
+        //controller.ejercicio9();
+
+        controller.ejercicioBombo();
+
+
 
 
 
